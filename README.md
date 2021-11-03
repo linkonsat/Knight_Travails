@@ -1,7 +1,7 @@
 # Knight_Travails
 Knight_Travails project for the Odin Project. 
 
-###
-Description
+### Description
 
-###How to run
+
+### How to run
