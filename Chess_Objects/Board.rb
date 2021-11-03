@@ -29,7 +29,3 @@ class GameBoard
 
 
 end
-news = GameBoard.new()
-p news.board
-p news.guide
-binding.pry
