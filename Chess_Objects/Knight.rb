@@ -42,10 +42,33 @@ class Knight
 
     end
 
-    def valid_move?(coordinates,board)
+    def valid_move?(coordinates = [2,1],board)
+        valid_moves = [[2,1],[2,-1],[-2,1],[-2,-1],[1,2],[1,-2],[-1,2],[-1,-2]]
+        binding.pry
+        if (valid_moves.any?(coordinates) && in_board?(coordinates,board))
+            binding.pry
+            return true
+        else
+            binding.pry
+            return false
+        end
         
     end
 
+    def in_board?(coordinates,board)
+        found_knight = board.board.flatten.select { |item| item.class == Knight && item.knight == "white_knight"}
+        binding.pry
+        found_knight[0].current_position[0] = found_knight[0].current_position[0] + coordinates[0]
+        found_knight[0].current_position[1] = found_knight[0].current_position[1] + coordinates[1]
+        if (found_knight[0].current_position[0] < 0 || found_knight[0].current_position[1] < 0 || found_knight[0].current_position[0] > 8 || found_knight[0].current_position[1] > 8)
+            binding.pry
+            return false
+        else
+            binding.pry
+            return true
+        end
+
+    end
     def random_move_generator
     end
 end

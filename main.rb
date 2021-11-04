@@ -30,10 +30,12 @@ class Main
     def piece_selection(piece = @new_knight)
         return piece
     end
+
     def round
     piece = piece_selection()
     @main_display.board_display
     @main_display.instructions
+    piece.valid_move?(@main_board)
         binding.pry
     end
 end
