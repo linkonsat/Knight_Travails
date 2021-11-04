@@ -11,8 +11,14 @@ class Main
         main_display = Display.new()
         main_display.board_display
         main_display.instructions
-        selected = gets.chomp
+        knight_directions
         
+    end
+
+    def knight_directions
+        new_knight = Knight.new()
+        new_knight.set_start_end
+        binding.pry
     end
 end
 
