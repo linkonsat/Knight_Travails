@@ -1,7 +1,7 @@
 require_relative "Board"
 
 class Knight
-    attr_accessor :knight, :start_position, :end_position
+    attr_accessor :knight, :start_position, :end_position, :current_position
 
     def initialize
         @knight = "white_knight"
@@ -11,6 +11,7 @@ class Knight
         split_user_input = validator
     @start_position = split_user_input[0..1]
     @end_position = split_user_input[2..3]
+    @current_position = @start_position
     end
 
     def validator
@@ -32,12 +33,19 @@ class Knight
     def set_start(coordinates,board)
 
     end
+    #validate move from 00 to 21 and test a move off the board returns invalid and a move that is not predefined is invalid.     
+    def move(input)
+   
+    end
 
     def position_reached?
-    end
-
-    def valid_move?
 
     end
 
+    def valid_move?(coordinates,board)
+        
+    end
+
+    def random_move_generator
+    end
 end
