@@ -4,12 +4,13 @@ class AI
 
     def pickable_pieces(pieces)
        @pickable_pieces = pieces
+       
     end
     def choose_piece(piece)
-        @current_piece = pickable_pieces()
+        @current_piece = @pickable_pieces[0]
     end
 
-    def move_data(peice = @pickable_pieces[0], board)
+    def move_data(peice = @current_piece, board)
         new_graph = WeightedEdgeGraph.new(peice,board)
         binding.pry
     end
