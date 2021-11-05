@@ -21,7 +21,6 @@ class GameBoard
 
     def set_start(coordinates,icon)
         @board[coordinates[0]][coordinates[1]] = icon
-
     end
 
     def set_new_position(coordinates,icon)

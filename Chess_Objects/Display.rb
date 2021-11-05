@@ -9,11 +9,11 @@ class Display
     def occupied?
     end
 
-    def board_display
+    def board_display(board)
         template = File.read('./Chess_Objects/displayboard.erb')
         erb_template = ERB.new template
-        board = GameBoard.new()
-        board_guide = board.guide 
+        board = board
+        board_guide = board.guide
         board_grid = board.board
         board_terminal_display = erb_template.result(binding)
         save_board_display(board_terminal_display)
