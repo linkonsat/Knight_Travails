@@ -14,7 +14,7 @@ class GameBoard
                   ["[]","[]","[]","[]","[]","[]","[]","[]"],
                   ["[]","[]","[]","[]","[]","[]","[]","[]"],
                   ["[]","[]","[]","[]","[]","[]","[]","[]"]]
-        @guide = [" ","1","2","3","4","5","6","7","8"]
+        @guide = [" ","0","1","2","3","4","5","6","7"]
 
         
     end
@@ -23,6 +23,7 @@ class GameBoard
         @board[coordinates[0]][coordinates[1]] = icon
     end
 
-    def set_new_position(coordinates,icon)
+    def set_new_position(coordinates,piece)
+        @board[coordinates[0]][coordinates[1]] = piece
     end
 end

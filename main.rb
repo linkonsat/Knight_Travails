@@ -31,21 +31,19 @@ class Game
 
     def round
     @ai = setup_AI
-    binding.pry
+    @ai.find_shortest_path
     @main_display.board_display(@main_board)
     @main_display.instructions
-    piece.valid_move?(coordinates= [2,-1],@main_board)
     end
 
     def setup_AI(pieces = @new_knight)
-        ai = AI.new()
+        ai = AI.new(@main_board)
         @ai = ai
         ai.pickable_pieces(@new_knight)
+        ai.choose_piece
+        return ai
     end
 
-    def ai_move
-        
-    end
 end
 
 new_game = Game.new()
