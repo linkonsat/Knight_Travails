@@ -31,11 +31,12 @@ class Game
 
     def round
     @ai = setup_AI
-    results = @ai.find_shortest_path
+    p results = @ai.find_shortest_path
     @main_display.board_display(@main_board)
     @main_display.instructions
     end
 
+ 
     def setup_AI(pieces = @new_knight)
         ai = AI.new(@main_board)
         @ai = ai

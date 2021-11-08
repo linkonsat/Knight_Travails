@@ -52,7 +52,7 @@ class Knight
         found_knight = board.board.flatten.select { |item| item.class == Knight && item.knight == "white_knight"}
         knight_vertical_index = found_knight[0].current_position[0] + coordinates[0]
         knight_horizontal_index = found_knight[0].current_position[1] + coordinates[1]
-        if (knight_vertical_index < 0 || knight_horizontal_index < 0 || knight_vertical_index > 8 || knight_horizontal_index > 8)
+        if (knight_vertical_index < 0 || knight_horizontal_index < 0 || knight_vertical_index > 7 || knight_horizontal_index > 7)
             return false
         else
             return true
