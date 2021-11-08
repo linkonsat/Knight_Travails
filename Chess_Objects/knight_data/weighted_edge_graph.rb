@@ -39,7 +39,8 @@ class WeightedEdgeGraph
             i += 1
          end
         
-        puts shortest_path(grid.last)
+
+        return shortest_path(grid.last)
         binding.pry
 
         
@@ -52,15 +53,14 @@ class WeightedEdgeGraph
         i = 0
         new_vertices = 0
         until i > new_edges.length - 1 
-            puts vertice.board
             if (vertice.knight.in_board?(new_edges[i],vertice.board))
                 new_board = GameBoard.new()
-                new_knight = Knight.new(update_knight(new_edges[i],vertice.knight))
-            new_list.push(Vertice.new(new_knight,new_board.set_new_position(new_knight.current_position,new_knight)))   
+                new_knight = Knight.new(update_knight(new_edges[i],vertice.knight),vertice.knight.end_position)
+                new_board.set_new_position(new_knight.current_position,new_knight)
+            new_list.push(Vertice.new(new_knight,new_board))   
             new_list[new_vertices].set_parent_edge(vertice)
             new_vertices += 1
             end
-            
             if(new_list[new_vertices - 1] != nil && new_list[new_vertices - 1].knight.current_position == vertice.knight.end_position)
                 i += new_edges.length
             else

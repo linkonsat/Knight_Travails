@@ -31,7 +31,7 @@ class Game
 
     def round
     @ai = setup_AI
-    @ai.find_shortest_path
+    results = @ai.find_shortest_path
     @main_display.board_display(@main_board)
     @main_display.instructions
     end
