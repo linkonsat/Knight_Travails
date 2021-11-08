@@ -10,25 +10,17 @@ class WeightedEdgeGraph
     end
 
     def shortest_path(grid)
-    end_target = grid[0].knight.end_position
-    end_knight = []
-    grid.each do | item|
-        if (item.knight.current_position == end_target)
-        end_knight.push(item)
-        end
-    end
-    return find_path(end_knight)
+    end_target = grid.knight.end_position
+    return find_path(grid)
     end
 
     def find_path(target_knight)
-        parent_node_state = [target_knight[0]]
+        parent_node_state = [target_knight]
         path = []
-
         until parent_node_state[0].nil?
             path.push(parent_node_state[0].knight.current_position)
             parent_node_state[0] = parent_node_state[0].parent_edge
         end
-        binding.pry
         return path
     end
     def grid_creation
@@ -39,11 +31,15 @@ class WeightedEdgeGraph
     def vertice_generator(knight, board)
         #takes in a new knight and board
         grid = []
-  
         grid.push(Vertice.new(knight,board))
-        grid.concat(new_list_level(grid[0]))
-
-        shortest_path(grid)
+         end_knight = grid[0].knight.end_position
+         i = 0
+         until grid.last.knight.current_position == end_knight
+         grid.concat(new_list_level(grid[i]))
+            i += 1
+         end
+        
+        puts shortest_path(grid.last)
         binding.pry
 
         
@@ -56,6 +52,7 @@ class WeightedEdgeGraph
         i = 0
         new_vertices = 0
         until i > new_edges.length - 1 
+            puts vertice.board
             if (vertice.knight.in_board?(new_edges[i],vertice.board))
                 new_board = GameBoard.new()
                 new_knight = Knight.new(update_knight(new_edges[i],vertice.knight))
