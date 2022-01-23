@@ -12,3 +12,14 @@ Finds the shortest path a target spot on the board using OOP principles.
 3. Board will display a knight on the side of the board
 
 4. Proceed to follow instructions in the terminal. Enjoy using Knights Travails :).
+
+### Learning outcomes
+
+1. How to utilize algorithims to solve problems working with multiple files
+2. Using problem solving to sove a complex problem
+3. Utilizing a graph to find the path among many multiple possible paths
+
+### Learning difficulties
+
+1. How to utilize algorithims for solving problems.
+2. Incorporating data structures in an effecient manner.
