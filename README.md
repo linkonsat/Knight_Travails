@@ -10,6 +10,7 @@ Finds the shortest path a target spot on the board using OOP principles.
 2. Git Clone the SSH address of this repository.
 
 3. Board will display a knight on the side of the board
+4. Enter "main.rb" into the terminal
 
 4. Proceed to follow instructions in the terminal. Enjoy using Knights Travails :).
 
